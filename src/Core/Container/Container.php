@@ -8,7 +8,8 @@ class Container
 
     public static function singleton(string $class, string|callable|null $build = null)
     {
-        // dd($class, $build);
+        // dd($class, $build, self::$instances);
+
         $existClass = array_key_exists($class, self::$instances);
         if (!$existClass) {
             match (true) {
@@ -21,7 +22,7 @@ class Container
         return self::$instances[$class];
     }
 
-    public static function getInstances()
+    public static function getInstances(): array
     {
         return self::$instances;
     }

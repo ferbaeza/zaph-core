@@ -2,6 +2,7 @@
 
 namespace Baezeta\ZaphCore;
 
+use PDO;
 use Baezeta\ZaphCore\Core\Core;
 use Baezeta\ZaphCore\Core\Routing\Routes;
 use Baezeta\ZaphCore\Core\Container\Container;
@@ -36,6 +37,7 @@ class App
         $app = resolve();
         $app->$nombre = $nombre;
     }
+
     
     public function get(string $uri, array $controller)
     {

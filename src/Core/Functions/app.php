@@ -16,6 +16,14 @@ if (!function_exists('resolve')) {
     }
 }
 
+if (!function_exists('register')) {
+    function register(string $class, $build = null)
+    {
+        return Container::singleton($class, $build);
+    }
+}
+
+
 if (!function_exists('singleton')) {
     function singleton(string $class = App::class, string|callable|null $build = null): mixed
     {

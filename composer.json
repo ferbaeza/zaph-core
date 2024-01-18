@@ -4,10 +4,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Baezeta\\ZaphCore\\": "src/"
+            "Baezeta\\ZaphCore\\": "src/",
+            "App\\": "app/"
         },
         "files": [
-            "src/Core/Functions/app.php"
+            "src/Core/Functions/app.php",
+            "src/Core/Utils/functions.php"
         ]
     },
     "authors": [
@@ -20,8 +22,17 @@
         "php": "^8.1",
         "vlucas/phpdotenv": "^5.6",
         "fakerphp/faker": "^1.23",
-        "symfony/var-dumper": "^6.4"
+        "symfony/var-dumper": "^6.4",
+        "baezeta/database-connection": "dev-main",
+        "baezeta/php_miniframe": "^0.0.5"
     },
+    "repositories": 
+    [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ferbaeza/database.git"
+        }
+    ],
     "scripts": {
         "serve": "php -S localhost:8000 -t public",
         "auto": "composer dump-autoload -o"
