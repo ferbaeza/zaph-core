@@ -6,8 +6,9 @@ class Container
 {
     private static array $instances = [];
 
-    public static function singleton(string $class, $build = null)
+    public static function singleton(string $class, string|callable|null $build = null)
     {
+        // dd($class, $build);
         $existClass = array_key_exists($class, self::$instances);
         if (!$existClass) {
             match (true) {
@@ -18,5 +19,20 @@ class Container
             };
         }
         return self::$instances[$class];
+    }
+
+    public static function getInstances()
+    {
+        return self::$instances;
+    }
+
+    public static function get(string $class)
+    {
+        return self::$instances[$class];
+    }
+    
+    public static function resolve(string $class)
+    {
+        return self::$instances[$class] ?? new $class();
     }
 }

@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "Baezeta\\ZaphCore\\": "src/"
-        }
+        },
+        "files": [
+            "src/Core/Functions/app.php"
+        ]
     },
     "authors": [
         {

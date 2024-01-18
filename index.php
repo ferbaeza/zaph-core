@@ -1,6 +1,9 @@
 <?php
 
 use Baezeta\ZaphCore\App;
+use Baezeta\ZaphCore\Core\Container\Container;
+use Baezeta\ZaphCore\Core\Configuration\Config;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 
@@ -10,9 +13,11 @@ class HomeController
     {
         echo "Hello world";
     }
-}
 
-$app = new App();
+}
+$app = App::bootstrap();
+$app->use('json');
+$app->set('config', Config::class);
 $routes = $app->routes;
 
 // $routes::group('/api', function ($routes) {
